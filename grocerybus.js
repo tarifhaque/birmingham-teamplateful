@@ -6,7 +6,16 @@ simpleCart({
     },
     tax:        0.09,
     currency:   "USD",
-    cartStyle : "table"
+    cartStyle : "table",
+    cartColumns: [
+        { attr: "name" , label: "Name" } ,
+        { attr: "price" , label: "Price", view: 'currency' } ,
+        { view: "decrement" , label: false , text: "-" } ,
+        { attr: "quantity" , label: "Qty" } ,
+        { view: "increment" , label: false , text: "+" } ,
+        { attr: "total" , label: "Subtotal", view: 'currency' } ,
+        { view: "remove" , text: "Remove" , label: false }
+    ]
 });
 
 var products = [
