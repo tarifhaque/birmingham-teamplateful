@@ -57,7 +57,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">  <div class="simpleCart_total"></div> </a></li>
-            <li><a href="javascript:;" class="simpleCart_checkout label label-info"> <font color="white" size="3">Checkout</font></a></li>
+            <li><a href="javascript:;" class="simpleCart_checkout label label-info" data-toggle="modal" data-target="#myModal"> 
+            <font color="white" size="3">Checkout</font></a></li>
           </ul>
         </div>
       </div>
@@ -101,6 +102,25 @@
 
 
     </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Checkout</h4>
+        </div>
+        <div class="modal-body">
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Purchase</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
