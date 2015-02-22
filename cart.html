@@ -56,14 +56,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="#">  <div class="simpleCart_total"></div> </a></li>
+            <li><a href="javascript:;" class="simpleCart_checkout label label-info"> <font color="white" size="3">Checkout</font></a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search">
-          </form>
         </div>
       </div>
     </nav>
@@ -83,18 +78,19 @@
         <div id="pages">
 
           <div id="foodcart" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Cart</h1>
+            <h1 class="page-header"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart</h1>
+
 
               <!-- show the cart -->
               <div class="simpleCart_items"></div>
 
               <br>
 
-                <b>Quantity</b>
+                <h4><span class="label label-primary">Quantity</span></h4>
                 <!-- cart quantity (ex. 3) -->
                 <div class="simpleCart_quantity"></div>
 
-                <b>Total</b>
+                <h4><span class="label label-success">Total</span></h4>
                 <!-- cart total (ex. $23.11)-->
                 <div class="simpleCart_total"></div>
 

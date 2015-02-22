@@ -32,12 +32,12 @@ var products = {
 };
 
 var colormap = {
-    "purple": "#A901DB",
-    "yellow": "#F4FA58",
-    "green": "#40FF00",
-    "white": "#FFFFFF",
+    "purple": "#663366",
+    "yellow": "#F9D423",
+    "green": "#B3CC57",
+    "white": "#FFFEE4",
     "red": "#FF0000",
-    "orange": "#FF8000"
+    "orange": "#FC913A"
 };
 
 var chartData;
@@ -121,7 +121,7 @@ window.onload = function() {
             // Start all items at a purchase quantity of 0.
             // var quant = "<input type='number' value='0' class='item_Quantity'> <br>";
 
-            var quant = "<input type='number' value='0' class='form-control' class='item_Quantity' aria-describedby='sizing-addon3'>";
+            var quant = "<input type='number' value='1' class='form-control' class='item_Quantity' aria-describedby='sizing-addon3'>";
             
 
             var left = "<span> <b> " + products[key].quantity + " in Stock </b> </span> <br>";
@@ -142,5 +142,9 @@ window.onload = function() {
     if ($('#chartcontainer')[0] !== undefined) {
         buildChart();
     }
+
+    simpleCart.bind( 'beforeCheckout' , function( data ){
+        console.log("checkout!");
+    });
 
 }
