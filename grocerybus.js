@@ -24,13 +24,54 @@ var products = {
 	"Banana" : {"quantity":"20", "price":"1.50", "color":"yellow"}, 
 	"Limes" : {"quantity":"30", "price":"2.50", "color":"green"},
 	"Lettuce" : {"quantity":"50", "price":"3.50", "color":"green"},
-	"Cornmeal" : {"quantity":"10", "price":"4.50", "color":"yellow"},
-	"Lemons" : {"quantity":"40", "price":"5.50", "color":"yellow"}
+	"Cornmeal" : {"quantity":"10", "price":"1.50", "color":"yellow"},
+	"Lemons" : {"quantity":"40", "price":"1.50", "color":"yellow"},
+    "Celery" : {"quantity":"44", "price":"1.50", "color":"green"},
+    "SweetPotato" : {"quantity":"23", "price":"1.50", "color":"orange"},
+    "Cauliflower" : {"quantity":"23", "price":"1.00", "color":"white"}
+};
+
+var colormap = {
+    "purple": "#A901DB",
+    "yellow": "#F4FA58",
+    "green": "#40FF00",
+    "white": "#FFFFFF",
+    "red": "#FF0000",
+    "orange": "#FF8000"
 };
 
 var chartData;
 
 function buildChart() {
+
+    var colors = [];
+
+    var colorCounts = {
+        "purple": 0,
+        "yellow": 0,
+        "green": 0,
+        "white": 0,
+        "red":0,
+        "orange":0
+    };
+
+    simpleCart.each(function( item , x ){
+        colors.push(products[item.get('name')].color);
+    });
+
+    for (var i = 0; i < colors.length; i++) {
+        colorCounts[colors[i]]++;
+    }
+
+    var series = [];
+    var seriesColors = [];
+    for (var key in colorCounts) {
+        var percentage = colorCounts[key] / colors.length;
+        if (percentage != 0) { 
+            series.push([key, percentage]);
+            seriesColors.push(colormap[key]);
+        }
+    }
 
     chartData.highcharts({
         chart: {
@@ -51,25 +92,14 @@ function buildChart() {
                 dataLabels: {
                     enabled: false
                 },
-                showInLegend: true
+                showInLegend: true,
+                colors: seriesColors
             }
         },
         series: [{
             type: 'pie',
             name: 'Browser share',
-            data: [
-                ['Firefox',   45.0],
-                ['IE',       26.8],
-                {
-                    name: 'Chrome',
-                    y: 12.8,
-                    sliced: true,
-                    selected: true
-                },
-                ['Safari',    8.5],
-                ['Opera',     6.2],
-                ['Others',   0.7]
-            ]
+            data: series
         }]
     });
 
@@ -92,12 +122,13 @@ window.onload = function() {
             // var quant = "<input type='number' value='0' class='item_Quantity'> <br>";
 
             var quant = "<input type='number' value='0' class='form-control' class='item_Quantity' aria-describedby='sizing-addon3'>";
+            
 
             var left = "<span> <b> " + products[key].quantity + " in Stock </b> </span> <br>";
             
             var price = "<span class='item_price'>" + "$" + products[key].price + " / </span>";
             
-            var add = "<a class='item_add' href='javascript:;''>Add to Cart</a> </div>";
+            var add = "<a class='item_add' href='javascript:;''><span class='label label-primary'>Add to Cart </span> </a> </div>";
             
             x.innerHTML = x.innerHTML + start + name + img + quant + left + price + add;
           
@@ -108,7 +139,7 @@ window.onload = function() {
     // Build the chart
     chartData = $('#chartcontainer');
 
-    if (chartData != 'undefined') {
+    if ($('#chartcontainer')[0] !== undefined) {
         buildChart();
     }
 
