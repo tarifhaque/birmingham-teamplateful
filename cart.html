@@ -57,7 +57,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">  <div class="simpleCart_total"></div> </a></li>
-            <li><a href="javascript:;" class="simpleCart_checkout label label-info" data-toggle="modal" data-target="#myModal"> 
+            <li><a href="#" class="label label-info" data-toggle="modal" data-target="#myModal"> 
             <font color="white" size="3">Checkout</font></a></li>
           </ul>
         </div>
@@ -72,6 +72,7 @@
             <li><a href="index.html">Menu</a></li>
             <li class="active"> <a href="cart.html"> Cart <span class="sr-only">(current)</span> </a> </li>
             <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="route.html">Route</a></li>
           </ul>
 
         </div>
@@ -110,12 +111,14 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">Checkout</h4>
         </div>
+        
         <div class="modal-body">
-         
+          If you purchase, the cart will be emptied.
         </div>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Purchase</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="checkoutCart()">Purchase</button>
         </div>
       </div>
     </div>

@@ -30,8 +30,6 @@
     <![endif]-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
     <script src="simplecart/simpleCart.js"></script>
 
@@ -67,8 +65,9 @@
           <ul class="nav nav-sidebar">
             <li><a href="index.html">Menu</a></li>
             <li><a href="cart.html">Cart</a></li>
-            <li class="active"> <a href="analytics.html"> Analytics <span class="sr-only">(current)</span> </a> </li>
+            <li><a href="cart.html">Analytics</a></li>
             <li><a href="route.html">Route</a></li>
+            <li class="active"> <a href="analytics.html"> Schedule <span class="sr-only">(current)</span> </a> </li>
           </ul>
 
         </div>
@@ -79,11 +78,39 @@
             
             <h1 class="page-header">
             <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-              Analytics</h1>
-            </div> <!-- end shopping cart -->
+              Schedule</h1>
           
-            <div id="chartcontainer" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+              <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Neighborhood Name</th>
+                  <th>Zip</th>
+                  <th>Day</th>
+                  <th>Time</th>
+                  <th>Location</th>
+                  <th>Type of Bus</th>
+                  <th>Bus Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <td>Hueytown</td>
+                  <td>35061</td>
+                  <td>Monday</td>
+                  <td>Morning</td>
+                  <td>Hueytown Elementary 112 Forest Road, Hueytown</td>
+                  <td>Includes refrigeration</td>
+                  <td>ret-1</td>
+                </tr>
 
+              </tbody>
+              </table>
+
+          </div> <!-- end shopping cart -->
+          
+
+            
           </div> <!-- end shopping cart again -->
 
         </div>

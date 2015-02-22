@@ -1,9 +1,4 @@
 simpleCart({
-    checkout: 
-    { 
-	   type: "PayPal" , 
-	   email: "you@yours.com" 
-    },
     tax:        0.09,
     currency:   "USD",
     cartStyle : "table",
@@ -16,7 +11,11 @@ simpleCart({
         { view: "decrement" , label: false , text: "-" } ,
         { view: "increment" , label: false , text: "+" } ,
         { view: "remove" , text: "Remove" , label: false }
-    ]
+    ],
+    checkout: { 
+        type: "SendForm" , 
+        url: "menu.html" 
+    } 
 });
 
 var products = {
@@ -28,7 +27,8 @@ var products = {
 	"Lemons" : {"quantity":"40", "price":"1.50", "color":"yellow"},
     "Celery" : {"quantity":"44", "price":"1.50", "color":"green"},
     "SweetPotato" : {"quantity":"23", "price":"1.50", "color":"orange"},
-    "Cauliflower" : {"quantity":"23", "price":"1.00", "color":"white"}
+    "Cauliflower" : {"quantity":"23", "price":"1.00", "color":"white"},
+    "ScuppernongGrapes" : {"quantity":"23", "price":"1.00", "color":"green"},
 };
 
 var colormap = {
@@ -143,8 +143,10 @@ window.onload = function() {
         buildChart();
     }
 
-    simpleCart.bind( 'beforeCheckout' , function( data ){
-        console.log("checkout!");
-    });
+}
 
+function checkoutCart() {
+    // empty the cart
+    simpleCart.empty();
+    simpleCart.update();
 }
