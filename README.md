@@ -4,7 +4,7 @@ Hackathon project for <a href="https://sites.google.com/a/datafest.net/globalurb
 ## Motivation
 40% of Birmingham is classified as a food desert. To address this problem, we propose a web application, Grocery Bus, an inventory tracking web application for rolling grocery stores.
 
-!(grocery-bus.png)
+![Screenshot](https://github.com/tarifhaque/birmingham-teamplateful/blob/master/grocery-bus.png)
 
 ## Development details
 * Purely a front-end developed with Bootstrap and simpleCartJS.
