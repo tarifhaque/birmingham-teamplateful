@@ -7,10 +7,15 @@ A 48-hour hackathon project for <a href="https://sites.google.com/a/datafest.net
 ## Grocery Bus
 To address this problem, we developed the front end for a web application, Grocery Bus, an inventory tracking web application for rolling grocery stores, with an "all-in-one" UI; it's intended to be used by both consumers, and managers of these grocery buses.
 
+Checkout some screenshots!
+
+#### Inventory
 ![Screenshot](https://github.com/tarifhaque/birmingham-teamplateful/blob/master/screenshots/inventory.png)
 
+#### Shopping cart 
 ![Screenshot2](https://github.com/tarifhaque/birmingham-teamplateful/blob/master/screenshots/checkout.png)
 
+#### Some nutrition analytics based on purchases
 ![Screenshot3](https://github.com/tarifhaque/birmingham-teamplateful/blob/master/screenshots/analytics.png)
 
 ## Development details
